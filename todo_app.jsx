@@ -79,7 +79,9 @@ TodoApp = ReactMeteor.createClass({
     },
 
     removeTask: function(taskId) {
-        Tasks.remove(taskId);
+        Tasks.update({_id: taskId}, {
+            $set: {color: !task.done}
+        });
 
         // Optimistic updating
         var tasks = this.state.tasks;
@@ -100,7 +102,8 @@ if (Meteor.isServer) {
                     text: "Task " + i,
                     createdAt: new Date(),
                     done: false,
-                    important: (i % 2) === 1
+                    important: (i % 2) === 1,
+                    colorIndex: Math.round(Math.random()*3)
                 });
             }
         }

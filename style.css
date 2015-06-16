@@ -16,6 +16,10 @@
     color: #d95c5c;
 }
 
+.blue {
+	background-color: #3b83c0;
+}
+
 .ui.toggle.checkbox input[type="checkbox"]:checked ~ .box:before,
 .ui.toggle.checkbox input[type="checkbox"]:checked ~ label:before,
 .ui.toggle.checkbox input[type="radio"]:checked ~ .box:before,
